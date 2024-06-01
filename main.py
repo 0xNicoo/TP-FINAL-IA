@@ -20,10 +20,6 @@ y = data['resultado']
 y_adjusted = y.replace(3, 2)
 X_train, X_test, y_train, y_test = split_data(X, y_adjusted)
 
-##################################################################
-# Parseo de datos a tensor para que lo pueda procesar TensorFlow #
-##################################################################
-
 evaluation, model = run_a_model(X_train, X_test, y_train, y_test, columnas_variables, columnas_constantes)
 acu = [evaluation, model]
 
