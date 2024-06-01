@@ -23,14 +23,14 @@ X_train, X_test, y_train, y_test = split_data(X, y_adjusted)
 evaluation, model = run_a_model(X_train, X_test, y_train, y_test, columnas_variables, columnas_constantes)
 acu = [evaluation, model]
 
-for i in range(0, 50):
+for i in range(0, 3):
     evaluation, model = run_a_model(X_train, X_test, y_train, y_test, columnas_variables, columnas_constantes)
     if (evaluation[1] > acu[0][1]):
         acu[0] = evaluation
         acu[1] = model   
 
 print("#"*10)
-print("MEJOR PRESICION: " + str(acu[0][1]))
+print("MEJOR PRECISION: " + str(acu[0][1]))
 print("#"*10)
 
 X_test_tensors = {col: tf.convert_to_tensor(X_test[col].values, dtype=tf.float32) for col in columnas_constantes}

@@ -20,4 +20,5 @@ def build_model(num_features, columnas_constantes):
 
     model = tf.keras.Model(inputs=list(inputs.values()) + [datos_variables_input], outputs=output)
     model.compile(optimizer=Adam(learning_rate=0.003), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    
     return model
